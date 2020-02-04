@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarvelCharacters.API", "src\MarvelCharacters.API\MarvelCharacters.API.csproj", "{E3072290-1476-48F0-8F4B-08F4525911AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelCharacters.API.Test", "src\MarvelCharacters.API.Test\MarvelCharacters.API.Test.csproj", "{8885612E-A0DC-4334-9122-2C8275E3376B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3072290-1476-48F0-8F4B-08F4525911AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3072290-1476-48F0-8F4B-08F4525911AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3072290-1476-48F0-8F4B-08F4525911AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3072290-1476-48F0-8F4B-08F4525911AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8885612E-A0DC-4334-9122-2C8275E3376B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8885612E-A0DC-4334-9122-2C8275E3376B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8885612E-A0DC-4334-9122-2C8275E3376B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8885612E-A0DC-4334-9122-2C8275E3376B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CBB4D26E-2588-4B84-8789-5670F3555734}
+	EndGlobalSection
+EndGlobal
