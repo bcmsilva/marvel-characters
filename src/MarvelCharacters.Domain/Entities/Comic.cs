@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarvelCharacters.Domain.Entities.Links;
+using System;
 using System.Collections.Generic;
 
 namespace MarvelCharacters.Domain.Entities
@@ -15,7 +16,7 @@ namespace MarvelCharacters.Domain.Entities
 
         public IList<Serie> Series { get; set; }
 
-        public IList<Character> Characters { get; set; }
+        public IList<CharacterComicLink> Characters { get; set; }
 
         public IList<Story> Stories { get; set; }
 
