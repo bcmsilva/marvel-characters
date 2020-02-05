@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace MarvelCharacters.API.Test
+namespace MarvelCharacters.Domain.Test
 {
     [TestClass]
     public class UnitTest1

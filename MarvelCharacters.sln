@@ -5,7 +5,13 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarvelCharacters.API", "src\MarvelCharacters.API\MarvelCharacters.API.csproj", "{E3072290-1476-48F0-8F4B-08F4525911AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelCharacters.API.Test", "src\MarvelCharacters.API.Test\MarvelCharacters.API.Test.csproj", "{8885612E-A0DC-4334-9122-2C8275E3376B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarvelCharacters.Shared", "src\MarvelCharacters.Shared\MarvelCharacters.Shared.csproj", "{178D239C-CD59-49A2-ABFE-A0D2C41C8B0C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarvelCharacters.Domain", "src\MarvelCharacters.Domain\MarvelCharacters.Domain.csproj", "{F3BF56E8-ED02-41E1-BCB3-86B7EE1C5755}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarvelCharacters.Infra", "src\MarvelCharacters.Infra\MarvelCharacters.Infra.csproj", "{448EACA6-3149-460B-9EF7-E138A0C98CED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelCharacters.Domain.Test", "src\MarvelCharacters.Domain.Test\MarvelCharacters.Domain.Test.csproj", "{DF4B5F8A-B548-4F4C-8B80-A905111F4DE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +23,22 @@ Global
 		{E3072290-1476-48F0-8F4B-08F4525911AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3072290-1476-48F0-8F4B-08F4525911AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3072290-1476-48F0-8F4B-08F4525911AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8885612E-A0DC-4334-9122-2C8275E3376B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8885612E-A0DC-4334-9122-2C8275E3376B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8885612E-A0DC-4334-9122-2C8275E3376B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8885612E-A0DC-4334-9122-2C8275E3376B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{178D239C-CD59-49A2-ABFE-A0D2C41C8B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{178D239C-CD59-49A2-ABFE-A0D2C41C8B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{178D239C-CD59-49A2-ABFE-A0D2C41C8B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{178D239C-CD59-49A2-ABFE-A0D2C41C8B0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3BF56E8-ED02-41E1-BCB3-86B7EE1C5755}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3BF56E8-ED02-41E1-BCB3-86B7EE1C5755}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3BF56E8-ED02-41E1-BCB3-86B7EE1C5755}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3BF56E8-ED02-41E1-BCB3-86B7EE1C5755}.Release|Any CPU.Build.0 = Release|Any CPU
+		{448EACA6-3149-460B-9EF7-E138A0C98CED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{448EACA6-3149-460B-9EF7-E138A0C98CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{448EACA6-3149-460B-9EF7-E138A0C98CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{448EACA6-3149-460B-9EF7-E138A0C98CED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF4B5F8A-B548-4F4C-8B80-A905111F4DE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF4B5F8A-B548-4F4C-8B80-A905111F4DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF4B5F8A-B548-4F4C-8B80-A905111F4DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF4B5F8A-B548-4F4C-8B80-A905111F4DE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
