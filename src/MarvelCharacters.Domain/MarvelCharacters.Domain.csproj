@@ -6,11 +6,6 @@
 
   <ItemGroup>
     <None Remove="Queries\a2pz0rjb.14m~" />
-    <None Remove="Queries\character.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="Queries\character.json" />
   </ItemGroup>
 
   <ItemGroup>

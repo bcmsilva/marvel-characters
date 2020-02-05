@@ -25,7 +25,7 @@ namespace MarvelCharacters.Domain.Queries
         public string Type { get; set; }
 
         [JsonProperty("series")]
-        public IList<SummaryQueryResult> Series { get; set; }
+        public ListQueryResult<SummaryQueryResult> Series { get; set; }
 
         [JsonProperty("characters")]
         public ListQueryResult<SummaryQueryResult> Characters { get; set; }
