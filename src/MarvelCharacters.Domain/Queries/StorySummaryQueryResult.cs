@@ -2,12 +2,9 @@
 
 namespace MarvelCharacters.Domain.Queries
 {
-    public class UrlQueryResult
+    public class StorySummaryQueryResult : SummaryQueryResult
     {
         [JsonProperty("type")]
         public string Type { get; set; }
-
-        [JsonProperty("url")]
-        public string Url { get; set; }
     }
 }

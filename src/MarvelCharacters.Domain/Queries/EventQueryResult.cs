@@ -1,16 +1,15 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 
 namespace MarvelCharacters.Domain.Queries
 {
-    public class CharacterQueryResult
+    public class EventQueryResult
     {
         [JsonProperty("id")]
         public int Id { get; set; }
 
-        [JsonProperty("name")]
-        public string Name { get; set; }
+        [JsonProperty("title")]
+        public string Title { get; set; }
 
         [JsonProperty("description")]
         public string Description { get; set; }
@@ -21,6 +20,12 @@ namespace MarvelCharacters.Domain.Queries
         [JsonProperty("resourceURI")]
         public string ResourceURI { get; set; }
 
+        [JsonProperty("start")]
+        public DateTime? Start { get; set; }
+
+        [JsonProperty("end")]
+        public DateTime? End { get; set; }
+
         [JsonProperty("comics")]
         public ListQueryResult<SummaryQueryResult> Comics { get; set; }
 
@@ -30,7 +35,13 @@ namespace MarvelCharacters.Domain.Queries
         [JsonProperty("stories")]
         public ListQueryResult<StorySummaryQueryResult> Stories { get; set; }
 
-        [JsonProperty("events")]
-        public ListQueryResult<SummaryQueryResult> Events { get; set; }
+        [JsonProperty("characters")]
+        public ListQueryResult<SummaryQueryResult> Characters { get; set; }
+
+        [JsonProperty("next")]
+        public SummaryQueryResult Next { get; set; }
+
+        [JsonProperty("previous")]
+        public SummaryQueryResult Previous { get; set; }
     }
 }
