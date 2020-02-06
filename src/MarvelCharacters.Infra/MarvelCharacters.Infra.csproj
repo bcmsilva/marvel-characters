@@ -6,10 +6,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MarvelCharacters.Domain\MarvelCharacters.Domain.csproj" />
+    <ProjectReference Include="..\MarvelCharacters.Shared\MarvelCharacters.Shared.csproj" />
   </ItemGroup>
 
 </Project>

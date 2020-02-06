@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace MarvelCharacters.Infra.EntityConfigurations
+namespace MarvelCharacters.Infra.EntityConfigurations.Links
 {
     public class CharacterComicLinkConfig : IEntityTypeConfiguration<CharacterComicLink>
     {

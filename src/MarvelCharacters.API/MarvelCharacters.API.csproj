@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MarvelCharacters.Infra\MarvelCharacters.Infra.csproj" />
+  </ItemGroup>
+
 </Project>

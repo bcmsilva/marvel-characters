@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarvelCharacters.Domain.Entities.Links;
+using System;
 using System.Collections.Generic;
 
 namespace MarvelCharacters.Domain.Entities
@@ -19,16 +20,16 @@ namespace MarvelCharacters.Domain.Entities
 
         public DateTime? End { get; set; }
 
-        public IList<Comic> Comics { get; set; }
+        public IList<ComicEventLink> Comics { get; set; }
 
-        public IList<Serie> Series { get; set; }
+        public IList<EventSerieLink> Series { get; set; }
 
-        public IList<Story> Stories { get; set; }
+        public IList<EventStoryLink> Stories { get; set; }
 
-        public IList<Character> Characters { get; set; }
+        public IList<CharacterEventLink> Characters { get; set; }
 
-        public Event Next { get; set; }
+        //public Event Next { get; set; }
 
-        public Event Previous { get; set; }
+        //public Event Previous { get; set; }
     }
 }

@@ -18,10 +18,10 @@ namespace MarvelCharacters.Domain.Entities
 
         public IList<CharacterComicLink> Comics { get; set; }
 
-        public IList<Serie> Series { get; set; }
+        public IList<CharacterSerieLink> Series { get; set; }
 
-        public IList<Story> Stories { get; set; }
+        public IList<CharacterStoryLink> Stories { get; set; }
 
-        public IList<Event> Events { get; set; }
+        public IList<CharacterEventLink> Events { get; set; }
     }
 }
