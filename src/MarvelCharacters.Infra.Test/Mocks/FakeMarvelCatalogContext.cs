@@ -1,14 +1,14 @@
-﻿using MarvelCharacters.Domain.Entities;
+﻿using MarvelCharacters.Domain;
+using MarvelCharacters.Domain.Entities;
 using MarvelCharacters.Domain.Entities.Links;
 using MarvelCharacters.Infra.EntityConfigurations;
 using MarvelCharacters.Infra.EntityConfigurations.Links;
-using MarvelCharacters.Shared;
 using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace MarvelCharacters.Domain
+namespace MarvelCharacters.Infra.Test.Mocks
 {
-    public class MarvelCatalogContext : DbContext, IMarvelCatalogContext
+    public class FakeMarvelCatalogContext : DbContext, IMarvelCatalogContext
     {
         public DbSet<Character> Characters { get; set; }
         public DbSet<Comic> Comics { get; set; }
@@ -19,10 +19,7 @@ namespace MarvelCharacters.Domain
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                //.UseInMemoryDatabase(databaseName: "marvel-catalog");
-                .UseSqlServer(Settings.ConnectionString);
-
-            base.OnConfiguring(optionsBuilder);
+                .UseInMemoryDatabase(databaseName: "fake-marvel-catalog");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -47,15 +44,13 @@ namespace MarvelCharacters.Domain
 
             modelBuilder.ApplyConfiguration(new StoryConfig());
 
-            SetInitialData(modelBuilder);
-
             base.OnModelCreating(modelBuilder);
         }
 
-        private void SetInitialData(ModelBuilder modelBuilder)
+        public void InitializeData()
         {
             #region Character
-            modelBuilder.Entity<Character>().HasData(
+            Characters.AddRange(
                 new Character
                 {
                     Id = 1009351,
@@ -75,7 +70,7 @@ namespace MarvelCharacters.Domain
             #endregion
 
             #region Comic
-            modelBuilder.Entity<Comic>().HasData(
+            Comics.AddRange(
                 new Comic
                 {
                     Id = 22253,
@@ -94,7 +89,7 @@ namespace MarvelCharacters.Domain
             #endregion
 
             #region Event
-            modelBuilder.Entity<Event>().HasData(
+            Events.AddRange(
                 new Event
                 {
                     Id = 116,
@@ -109,7 +104,7 @@ namespace MarvelCharacters.Domain
             #endregion
 
             #region Serie
-            modelBuilder.Entity<Serie>().HasData(
+            Series.AddRange(
                 new Serie
                 {
                     Id = 2021,
@@ -131,7 +126,7 @@ namespace MarvelCharacters.Domain
             #endregion
 
             #region Story
-            modelBuilder.Entity<Story>().HasData(
+            Stories.AddRange(
                 new Story
                 {
                     Id = 702,
@@ -153,7 +148,7 @@ namespace MarvelCharacters.Domain
             #endregion
 
             #region CharacterComicLink
-            modelBuilder.Entity<CharacterComicLink>().HasData(
+            Set<CharacterComicLink>().AddRange(
                 new CharacterComicLink
                 {
                     IdCharacter = 1009351,
@@ -167,7 +162,7 @@ namespace MarvelCharacters.Domain
             #endregion
 
             #region CharacterEventLink
-            modelBuilder.Entity<CharacterEventLink>().HasData(
+            Set<CharacterEventLink>().AddRange(
                 new CharacterEventLink
                 {
                     IdCharacter = 1009351,
@@ -181,7 +176,7 @@ namespace MarvelCharacters.Domain
             #endregion
 
             #region CharacterSerieLink
-            modelBuilder.Entity<CharacterSerieLink>().HasData(
+            Set<CharacterSerieLink>().AddRange(
                 new CharacterSerieLink
                 {
                     IdCharacter = 1009351,
@@ -195,7 +190,7 @@ namespace MarvelCharacters.Domain
             #endregion
 
             #region CharacterStoryLink
-            modelBuilder.Entity<CharacterStoryLink>().HasData(
+            Set<CharacterStoryLink>().AddRange(
                 new CharacterStoryLink
                 {
                     IdCharacter = 1009351,
@@ -209,7 +204,7 @@ namespace MarvelCharacters.Domain
             #endregion
 
             #region ComicEventLink
-            modelBuilder.Entity<ComicEventLink>().HasData(
+            Set<ComicEventLink>().AddRange(
                 new ComicEventLink
                 {
                     IdComic = 22253,
@@ -223,7 +218,7 @@ namespace MarvelCharacters.Domain
             #endregion
 
             #region ComicSerieLink
-            modelBuilder.Entity<ComicSerieLink>().HasData(
+            Set<ComicSerieLink>().AddRange(
                 new ComicSerieLink
                 {
                     IdComic = 22253,
@@ -237,7 +232,7 @@ namespace MarvelCharacters.Domain
             #endregion
 
             #region ComicStoryLink
-            modelBuilder.Entity<ComicStoryLink>().HasData(
+            Set<ComicStoryLink>().AddRange(
                 new ComicStoryLink
                 {
                     IdComic = 22253,
@@ -251,7 +246,7 @@ namespace MarvelCharacters.Domain
             #endregion
 
             #region EventSerieLink
-            modelBuilder.Entity<EventSerieLink>().HasData(
+            Set<EventSerieLink>().AddRange(
                 new EventSerieLink
                 {
                     IdEvent = 116,
@@ -265,7 +260,7 @@ namespace MarvelCharacters.Domain
             #endregion
 
             #region EventStoryLink
-            modelBuilder.Entity<EventStoryLink>().HasData(
+            Set<EventStoryLink>().AddRange(
                 new EventStoryLink
                 {
                     IdEvent = 116,
@@ -279,7 +274,7 @@ namespace MarvelCharacters.Domain
             #endregion
 
             #region SerieStoryLink
-            modelBuilder.Entity<SerieStoryLink>().HasData(
+            Set<SerieStoryLink>().AddRange(
                 new SerieStoryLink
                 {
                     IdSerie = 2021,
@@ -291,6 +286,8 @@ namespace MarvelCharacters.Domain
                 }
             );
             #endregion
+
+            SaveChanges();
         }
     }
 }

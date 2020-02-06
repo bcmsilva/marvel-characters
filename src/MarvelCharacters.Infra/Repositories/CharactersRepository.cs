@@ -10,9 +10,9 @@ namespace MarvelCharacters.Infra.Repositories
 {
     public class CharactersRepository : ICharactersRepository
     {
-        private MarvelCatalogContext _dbContext;
+        private IMarvelCatalogContext _dbContext;
 
-        public CharactersRepository(MarvelCatalogContext dbContext)
+        public CharactersRepository(IMarvelCatalogContext dbContext)
         {
             _dbContext = dbContext;
         }
