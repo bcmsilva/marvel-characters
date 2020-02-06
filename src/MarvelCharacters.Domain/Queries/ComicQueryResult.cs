@@ -12,6 +12,9 @@ namespace MarvelCharacters.Domain.Queries
         [JsonProperty("title")]
         public string Title { get; set; }
 
+        [JsonProperty("description")]
+        public string Description { get; set; }
+
         [JsonProperty("modified")]
         public DateTime? Modified { get; set; }
 
