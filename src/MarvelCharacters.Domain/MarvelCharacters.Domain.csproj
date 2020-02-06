@@ -5,16 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Queries\Params\**" />
+    <EmbeddedResource Remove="Queries\Params\**" />
+    <None Remove="Queries\Params\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Queries\a2pz0rjb.14m~" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Flunt" Version="1.0.4" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Queries\Params\" />
-    <Folder Include="Queries\Results\" />
   </ItemGroup>
 
 </Project>

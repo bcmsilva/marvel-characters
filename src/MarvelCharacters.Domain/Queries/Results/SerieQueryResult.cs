@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace MarvelCharacters.Domain.Queries
+namespace MarvelCharacters.Domain.Queries.Results
 {
     public class SerieQueryResult
     {
@@ -28,23 +28,5 @@ namespace MarvelCharacters.Domain.Queries
 
         [JsonProperty("endYear")]
         public int? EndYear { get; set; }
-
-        [JsonProperty("comics")]
-        public ListQueryResult<SummaryQueryResult> Comics { get; set; }
-
-        [JsonProperty("characters")]
-        public ListQueryResult<SummaryQueryResult> Characters { get; set; }
-
-        [JsonProperty("stories")]
-        public ListQueryResult<StorySummaryQueryResult> Stories { get; set; }
-
-        [JsonProperty("events")]
-        public ListQueryResult<SummaryQueryResult> Events { get; set; }
-
-        [JsonProperty("next")]
-        public SummaryQueryResult Next { get; set; }
-
-        [JsonProperty("previous")]
-        public SummaryQueryResult Previous { get; set; }
     }
 }

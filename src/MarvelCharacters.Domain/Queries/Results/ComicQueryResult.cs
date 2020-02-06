@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 
 namespace MarvelCharacters.Domain.Queries
 {
@@ -20,17 +19,5 @@ namespace MarvelCharacters.Domain.Queries
 
         [JsonProperty("resourceURI")]
         public string ResourceURI { get; set; }
-
-        [JsonProperty("series")]
-        public IList<SummaryQueryResult> Series { get; set; }
-
-        [JsonProperty("characters")]
-        public ListQueryResult<SummaryQueryResult> Characters { get; set; }
-
-        [JsonProperty("stories")]
-        public ListQueryResult<StorySummaryQueryResult> Stories { get; set; }
-
-        [JsonProperty("events")]
-        public ListQueryResult<SummaryQueryResult> Events { get; set; }
     }
 }

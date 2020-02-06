@@ -1,9 +1,7 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace MarvelCharacters.Domain.Queries
+namespace MarvelCharacters.Domain.Queries.Results
 {
     public class PagedQueryResult<T>
     {

@@ -18,32 +18,34 @@ namespace MarvelCharacters.Domain
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite(Settings.ConnectionString);
+            optionsBuilder
+                //.UseInMemoryDatabase(databaseName: "marvel-catalog");
+                .UseSqlServer(Settings.ConnectionString);
 
             base.OnConfiguring(optionsBuilder);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new CharacterComicLinkConfig()); //
-            modelBuilder.ApplyConfiguration(new CharacterEventLinkConfig());//
-            modelBuilder.ApplyConfiguration(new CharacterSerieLinkConfig());//
-            modelBuilder.ApplyConfiguration(new CharacterStoryLinkConfig());//
-            modelBuilder.ApplyConfiguration(new CharacterConfig());//
+            modelBuilder.ApplyConfiguration(new CharacterComicLinkConfig());
+            modelBuilder.ApplyConfiguration(new CharacterEventLinkConfig());
+            modelBuilder.ApplyConfiguration(new CharacterSerieLinkConfig());
+            modelBuilder.ApplyConfiguration(new CharacterStoryLinkConfig());
+            modelBuilder.ApplyConfiguration(new CharacterConfig());
 
-            modelBuilder.ApplyConfiguration(new ComicEventLinkConfig());//
-            modelBuilder.ApplyConfiguration(new ComicSerieLinkConfig());//
-            modelBuilder.ApplyConfiguration(new ComicStoryLinkConfig());//
-            modelBuilder.ApplyConfiguration(new ComicConfig());//
+            modelBuilder.ApplyConfiguration(new ComicEventLinkConfig());
+            modelBuilder.ApplyConfiguration(new ComicSerieLinkConfig());
+            modelBuilder.ApplyConfiguration(new ComicStoryLinkConfig());
+            modelBuilder.ApplyConfiguration(new ComicConfig());
 
-            modelBuilder.ApplyConfiguration(new EventSerieLinkConfig());//
-            modelBuilder.ApplyConfiguration(new EventStoryLinkConfig());//
-            modelBuilder.ApplyConfiguration(new EventConfig());//
+            modelBuilder.ApplyConfiguration(new EventSerieLinkConfig());
+            modelBuilder.ApplyConfiguration(new EventStoryLinkConfig());
+            modelBuilder.ApplyConfiguration(new EventConfig());
 
             modelBuilder.ApplyConfiguration(new SerieStoryLinkConfig());
-            modelBuilder.ApplyConfiguration(new SerieConfig());//
+            modelBuilder.ApplyConfiguration(new SerieConfig());
 
-            modelBuilder.ApplyConfiguration(new StoryConfig());//
+            modelBuilder.ApplyConfiguration(new StoryConfig());
 
             SetInitialData(modelBuilder);
 

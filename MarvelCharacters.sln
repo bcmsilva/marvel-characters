@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarvelCharacters.Domain", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarvelCharacters.Infra", "src\MarvelCharacters.Infra\MarvelCharacters.Infra.csproj", "{448EACA6-3149-460B-9EF7-E138A0C98CED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelCharacters.Domain.Test", "src\MarvelCharacters.Domain.Test\MarvelCharacters.Domain.Test.csproj", "{DF4B5F8A-B548-4F4C-8B80-A905111F4DE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarvelCharacters.Domain.Test", "src\MarvelCharacters.Domain.Test\MarvelCharacters.Domain.Test.csproj", "{DF4B5F8A-B548-4F4C-8B80-A905111F4DE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelCharacters.Infra.Test", "src\MarvelCharacters.Infra.Test\MarvelCharacters.Infra.Test.csproj", "{E7943B1B-1C4A-4EB5-B20C-04AD13D704C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{DF4B5F8A-B548-4F4C-8B80-A905111F4DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF4B5F8A-B548-4F4C-8B80-A905111F4DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF4B5F8A-B548-4F4C-8B80-A905111F4DE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7943B1B-1C4A-4EB5-B20C-04AD13D704C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7943B1B-1C4A-4EB5-B20C-04AD13D704C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7943B1B-1C4A-4EB5-B20C-04AD13D704C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7943B1B-1C4A-4EB5-B20C-04AD13D704C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
