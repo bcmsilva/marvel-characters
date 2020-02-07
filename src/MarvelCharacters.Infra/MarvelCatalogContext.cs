@@ -118,6 +118,7 @@ namespace MarvelCharacters.Domain
                     ResourceURI = "http://gateway.marvel.com/v1/public/series/2021",
                     StartYear = 1962,
                     EndYear = 1999,
+                    Modified = new DateTime(2016, 9, 22, 16, 36, 43)
                 }, new Serie
                 {
                     Id = 2271,
@@ -126,6 +127,7 @@ namespace MarvelCharacters.Domain
                     ResourceURI = "http://gateway.marvel.com/v1/public/series/2271",
                     StartYear = 1976,
                     EndYear = 1998,
+                    Modified = new DateTime(2019, 9, 5, 14, 31, 53)
                 }
             );
             #endregion

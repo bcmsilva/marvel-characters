@@ -52,7 +52,7 @@ namespace MarvelCharacters.Tests.Domain.QueryHandler
         [DataRow(1, -1, 0)]
         [DataRow(1, 101, 0)]
         [DataRow(1, 20, -1)]
-        public void ShouldReturnErrorWhenGetCharactersRequestInvalid(int idCharacter, int limit, int offSet)
+        public void ShouldReturnErrorWhenRequestInvalid(int idCharacter, int limit, int offSet)
         {
             var request = new GetComicsByIdCharacterQuery
             {

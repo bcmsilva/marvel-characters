@@ -10,32 +10,32 @@ using System.Threading.Tasks;
 namespace MarvelCharacters.Tests.Domain.QueryHandler
 {
     [TestClass]
-    public class EventsQueryHandlerTest
+    public class StoriesQueryHandlerTest
     {
-        private Mock<IEventsRepository> _mockRepository;
-        private EventsQueryHandler _handler;
+        private Mock<IStoriesRepository> _mockRepository;
+        private StoriesQueryHandler _handler;
 
         [TestInitialize]
         public void TestInitialize()
         {
-            _mockRepository = new Mock<IEventsRepository>();
-            _handler = new EventsQueryHandler(_mockRepository.Object);
+            _mockRepository = new Mock<IStoriesRepository>();
+            _handler = new StoriesQueryHandler(_mockRepository.Object);
         }
 
         [TestMethod]
         public void ShouldReturnEventsWhenRequestIsValid()
         {
-            var request = new GetEventsByIdCharacterQuery
+            var request = new GetStoriesByIdCharacterQuery
             {
                 IdCharacter = 123,
                 Limit = 20,
                 OffSet = 0
             };
 
-            var repositoryResult = new PagedQueryResult<EventQueryResult>();
+            var repositoryResult = new PagedQueryResult<StoryQueryResult>();
 
             _mockRepository
-                .Setup(s => s.GetEventsByIdCharacterAsync(request))
+                .Setup(s => s.GetStoriesByIdCharacterAsync(request))
                 .Returns(Task.FromResult(repositoryResult));
 
             var result = _handler.Handle(request);
@@ -54,7 +54,7 @@ namespace MarvelCharacters.Tests.Domain.QueryHandler
         [DataRow(1, 20, -1)]
         public void ShouldReturnErrorWhenRequestInvalid(int idCharacter, int limit, int offSet)
         {
-            var request = new GetEventsByIdCharacterQuery
+            var request = new GetStoriesByIdCharacterQuery
             {
                 IdCharacter = idCharacter,
                 Limit = limit,

@@ -25,7 +25,5 @@ namespace MarvelCharacters.Domain.Entities
         public IList<ComicStoryLink> Comics { get; set; }
 
         public IList<EventStoryLink> Events { get; set; }
-
-        //public Comic Originalissue { get; set; }
     }
 }

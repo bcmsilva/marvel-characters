@@ -28,7 +28,7 @@ namespace MarvelCharacters.Tests.Infra.Repositories
         [DataRow(1009351, 20, 0, "Acts of Vengeance!", null, null, "Acts of Vengeance!", 1)]
         [DataRow(1009610, 20, 0, null, "Acts", null, "Acts of Vengeance!", 1)]
         [DataRow(1009610, 20, 0, null, null, "2013-06-30", null, 0)]
-        public void ShouldReturnCharacters(int idCharacter, int limit, int offSet, string title, string titleStartsWith, string modifiedSince, string resultTitle, int total)
+        public void ShouldReturnEvents(int idCharacter, int limit, int offSet, string title, string titleStartsWith, string modifiedSince, string resultTitle, int total)
         {
             var modifiedSinceDate = !string.IsNullOrEmpty(modifiedSince) ? DateTime.ParseExact(modifiedSince, "yyyy-MM-dd", CultureInfo.InvariantCulture) : (DateTime?)null;
 

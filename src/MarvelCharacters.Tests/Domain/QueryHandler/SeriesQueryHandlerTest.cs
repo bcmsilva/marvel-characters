@@ -1,5 +1,4 @@
 ﻿using MarvelCharacters.Domain.Queries.Inputs;
-using MarvelCharacters.Domain.Queries.Outputs;
 using MarvelCharacters.Domain.Queries.Results.Outputs;
 using MarvelCharacters.Domain.QueryHandler;
 using MarvelCharacters.Domain.Repositories;
@@ -10,32 +9,32 @@ using System.Threading.Tasks;
 namespace MarvelCharacters.Tests.Domain.QueryHandler
 {
     [TestClass]
-    public class EventsQueryHandlerTest
+    public class SeriesQueryHandlerTest
     {
-        private Mock<IEventsRepository> _mockRepository;
-        private EventsQueryHandler _handler;
+        private Mock<ISeriesRepository> _mockRepository;
+        private SeriesQueryHandler _handler;
 
         [TestInitialize]
         public void TestInitialize()
         {
-            _mockRepository = new Mock<IEventsRepository>();
-            _handler = new EventsQueryHandler(_mockRepository.Object);
+            _mockRepository = new Mock<ISeriesRepository>();
+            _handler = new SeriesQueryHandler(_mockRepository.Object);
         }
 
         [TestMethod]
-        public void ShouldReturnEventsWhenRequestIsValid()
+        public void ShouldReturnSeriesWhenRequestIsValid()
         {
-            var request = new GetEventsByIdCharacterQuery
+            var request = new GetSeriesByIdCharacterQuery
             {
                 IdCharacter = 123,
                 Limit = 20,
                 OffSet = 0
             };
 
-            var repositoryResult = new PagedQueryResult<EventQueryResult>();
+            var repositoryResult = new PagedQueryResult<SerieQueryResult>();
 
             _mockRepository
-                .Setup(s => s.GetEventsByIdCharacterAsync(request))
+                .Setup(s => s.GetSeriesByIdCharacterAsync(request))
                 .Returns(Task.FromResult(repositoryResult));
 
             var result = _handler.Handle(request);
@@ -54,7 +53,7 @@ namespace MarvelCharacters.Tests.Domain.QueryHandler
         [DataRow(1, 20, -1)]
         public void ShouldReturnErrorWhenRequestInvalid(int idCharacter, int limit, int offSet)
         {
-            var request = new GetEventsByIdCharacterQuery
+            var request = new GetSeriesByIdCharacterQuery
             {
                 IdCharacter = idCharacter,
                 Limit = limit,

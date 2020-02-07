@@ -29,9 +29,5 @@ namespace MarvelCharacters.Domain.Entities
         public IList<SerieStoryLink> Stories { get; set; }
 
         public IList<EventSerieLink> Events { get; set; }
-
-        //public Serie Next { get; set; }
-
-        //public Serie Previous { get; set; }
     }
 }
