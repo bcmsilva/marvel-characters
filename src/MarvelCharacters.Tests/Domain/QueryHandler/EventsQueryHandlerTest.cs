@@ -10,32 +10,32 @@ using System.Threading.Tasks;
 namespace MarvelCharacters.Tests.Domain.QueryHandler
 {
     [TestClass]
-    public class ComicsQueryHandlerTest
+    public class EventsQueryHandlerTest
     {
-        private Mock<IComicsRepository> _mockRepository;
-        private ComicsQueryHandler _handler;
+        private Mock<IEventsRepository> _mockRepository;
+        private EventsQueryHandler _handler;
 
         [TestInitialize]
         public void TestInitialize()
         {
-            _mockRepository = new Mock<IComicsRepository>();
-            _handler = new ComicsQueryHandler(_mockRepository.Object);
+            _mockRepository = new Mock<IEventsRepository>();
+            _handler = new EventsQueryHandler(_mockRepository.Object);
         }
 
         [TestMethod]
-        public void ShouldReturnComicsWhenRequestIsValid()
+        public void ShouldReturnEventsWhenRequestIsValid()
         {
-            var request = new GetComicsByIdCharacterQuery
+            var request = new GetEventsByIdCharacterQuery
             {
                 IdCharacter = 123,
                 Limit = 20,
                 OffSet = 0
             };
 
-            var repositoryResult = new PagedQueryResult<ComicQueryResult>();
+            var repositoryResult = new PagedQueryResult<EventQueryResult>();
 
             _mockRepository
-                .Setup(s => s.GetComicsByIdCharacterAsync(request))
+                .Setup(s => s.GetEventsByIdCharacterAsync(request))
                 .Returns(Task.FromResult(repositoryResult));
 
             var result = _handler.Handle(request);
@@ -54,7 +54,7 @@ namespace MarvelCharacters.Tests.Domain.QueryHandler
         [DataRow(1, 20, -1)]
         public void ShouldReturnErrorWhenGetCharactersRequestInvalid(int idCharacter, int limit, int offSet)
         {
-            var request = new GetComicsByIdCharacterQuery
+            var request = new GetEventsByIdCharacterQuery
             {
                 IdCharacter = idCharacter,
                 Limit = limit,
