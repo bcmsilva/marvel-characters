@@ -2,7 +2,7 @@
 
 Marvel Characters é uma api de catologo de personagens da Marvel.
 
-## Design Patterns Utilizados
+## Arquitetura
 
 Foram utilizados alguns design patterns na contrução deste projeto, a fim de simplicar o desenvolvimento e garantir boas práticas de desenvolvimento.
 
@@ -12,4 +12,12 @@ Foram utilizados alguns design patterns na contrução deste projeto, a fim de sim
 | Repository |Isola regras de comunicação com base de dados das regras de negócio. Possibilita mudanças de tecnologia de armazenamento de dados de grandes alterações nas outras áreas da aplicação. |
 | Notifications |Utilizado para validações em geral e evita que exceptions tenham este fim. Garante uma melhor performance do sistema (Exceptions tendem à ser custosas falando de processamento).  |
 
-Além dos design patterns também foram aplicados conceitos e praticas de clean code.
+Além dos design patterns também foram aplicados conceitos e práticas de clean code.
+
+## Executar o projeto
+
+- Clonar o projeto;
+- Abrir a solution no Visual Studio;
+- Executar o projeto; 
+- Não precisa configurar banco de dados, o banco é executado na memória;
+- Existe um projeto de testes na solution feito em MSTest, basta utilizar o Test Explorer para executa-lós.
