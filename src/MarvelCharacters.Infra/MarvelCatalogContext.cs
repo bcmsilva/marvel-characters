@@ -2,7 +2,6 @@
 using MarvelCharacters.Domain.Entities.Links;
 using MarvelCharacters.Infra.EntityConfigurations;
 using MarvelCharacters.Infra.EntityConfigurations.Links;
-using MarvelCharacters.Shared;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -19,8 +18,7 @@ namespace MarvelCharacters.Domain
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                //.UseInMemoryDatabase(databaseName: "marvel-catalog");
-                .UseSqlServer(Settings.ConnectionString);
+                .UseInMemoryDatabase(databaseName: "marvel-catalog");
 
             base.OnConfiguring(optionsBuilder);
         }
