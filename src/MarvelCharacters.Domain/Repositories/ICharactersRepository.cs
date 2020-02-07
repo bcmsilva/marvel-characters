@@ -7,6 +7,7 @@ namespace MarvelCharacters.Domain.Repositories
 {
     public interface ICharactersRepository
     {
-        Task<PagedQueryResult<CharacterQueryResult>> GetCharactersAsync(GetPagedCharactersQuery query);
+        Task<PagedQueryResult<CharacterQueryResult>> GetCharactersAsync(GetCharactersQuery query);
+        Task<PagedQueryResult<CharacterQueryResult>> GetOneCharacterAsync(GetOneCharacterQuery query);
     }
 }

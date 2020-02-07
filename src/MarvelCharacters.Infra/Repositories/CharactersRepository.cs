@@ -18,7 +18,7 @@ namespace MarvelCharacters.Infra.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<PagedQueryResult<CharacterQueryResult>> GetCharactersAsync(GetPagedCharactersQuery query)
+        public async Task<PagedQueryResult<CharacterQueryResult>> GetCharactersAsync(GetCharactersQuery query)
         {
             var queryFiltered = _dbContext.Characters.AsNoTracking()
                 .Where(w =>
@@ -33,6 +33,30 @@ namespace MarvelCharacters.Infra.Repositories
                 Count = queryPaged.Count(),
                 Limit = query.Limit,
                 OffSet = query.OffSet,
+                Total = queryFiltered.Count(),
+                Results = await queryPaged.Select(s => new CharacterQueryResult
+                {
+                    Id = s.Id,
+                    Description = s.Description,
+                    Name = s.Name,
+                    Modified = s.Modified,
+                    ResourceURI = s.ResourceURI
+                }).ToListAsync()
+            };
+        }
+
+        public async Task<PagedQueryResult<CharacterQueryResult>> GetOneCharacterAsync(GetOneCharacterQuery query)
+        {
+            var queryFiltered = _dbContext.Characters.AsNoTracking()
+                .Where(w => w.Id == query.IdCharacter);
+
+            var queryPaged = queryFiltered.Skip(0).Take(20);
+
+            return new PagedQueryResult<CharacterQueryResult>
+            {
+                Count = queryPaged.Count(),
+                Limit = 20,
+                OffSet = 0,
                 Total = queryFiltered.Count(),
                 Results = await queryPaged.Select(s => new CharacterQueryResult
                 {

@@ -23,9 +23,9 @@ namespace MarvelCharacters.Tests.Domain.QueryHandler
         }
 
         [TestMethod]
-        public void GetPagedCharacters_ShouldReturnCharactersWhenRequestIsValid()
+        public void ShouldReturnCharactersWhenRequestIsValid()
         {
-            var request = new GetPagedCharactersQuery
+            var request = new GetCharactersQuery
             {
                 Limit = 20,
                 OffSet = 0
@@ -50,12 +50,49 @@ namespace MarvelCharacters.Tests.Domain.QueryHandler
         [DataRow(-1, 0)]
         [DataRow(101, 0)]
         [DataRow(20, -1)]
-        public void GetPagedCharacters_ShouldReturnErrorWhenRequestInvalid(int limit, int offSet)
+        public void ShouldReturnErrorWhenGetCharactersRequestInvalid(int limit, int offSet)
         {
-            var request = new GetPagedCharactersQuery
+            var request = new GetCharactersQuery
             {
                 Limit = limit,
                 OffSet = offSet
+            };
+
+            var result = _handler.Handle(request);
+
+            Assert.IsFalse(request.Valid);
+            Assert.IsFalse(_handler.Valid);
+            Assert.IsFalse(result.Result.Success);
+        }
+
+        [TestMethod]
+        public void ShouldReturnOneCharacterWhenRequestIsValid()
+        {
+            var request = new GetOneCharacterQuery
+            {
+                IdCharacter = 123
+            };
+
+            var repositoryResult = new PagedQueryResult<CharacterQueryResult>();
+
+            _mockRepository
+                .Setup(s => s.GetOneCharacterAsync(request))
+                .Returns(Task.FromResult(repositoryResult));
+
+            var result = _handler.Handle(request);
+
+            Assert.IsTrue(request.Valid);
+            Assert.IsTrue(_handler.Valid);
+            Assert.IsTrue(result.Result.Success);
+            Assert.AreEqual(result.Result.Data, repositoryResult);
+        }
+
+        [TestMethod]
+        public void ShouldReturnErrorWhenGetOneCharacterRequestInvalid()
+        {
+            var request = new GetOneCharacterQuery
+            {
+                IdCharacter = 0
             };
 
             var result = _handler.Handle(request);
