@@ -14,7 +14,7 @@ namespace MarvelCharacters.Domain.Queries.Inputs
         public int Limit { get; set; }
         public int OffSet { get; set; }
 
-        public bool Validate()
+        public virtual bool Validate()
         {
             AddNotifications(new Contract()
                 .Requires()
