@@ -1,6 +1,7 @@
 ﻿using MarvelCharacters.Domain;
-using MarvelCharacters.Domain.Queries;
-using MarvelCharacters.Domain.Queries.Results;
+using MarvelCharacters.Domain.Queries.Inputs;
+using MarvelCharacters.Domain.Queries.Outputs;
+using MarvelCharacters.Domain.Queries.Results.Outputs;
 using MarvelCharacters.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;

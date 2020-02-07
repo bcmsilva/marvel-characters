@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MarvelCharacters.Domain.Queries
+namespace MarvelCharacters.Domain.Queries.Inputs
 {
     public class GetPagedCharactersQuery : GetPagedQuery
     {

@@ -1,15 +1,15 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace MarvelCharacters.Domain.Queries
+namespace MarvelCharacters.Domain.Queries.Outputs
 {
-    public class ComicQueryResult
+    public class CharacterQueryResult
     {
         [JsonProperty("id")]
         public int Id { get; set; }
 
-        [JsonProperty("title")]
-        public string Title { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
 
         [JsonProperty("description")]
         public string Description { get; set; }

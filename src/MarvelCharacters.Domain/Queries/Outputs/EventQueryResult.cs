@@ -1,9 +1,9 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace MarvelCharacters.Domain.Queries.Results
+namespace MarvelCharacters.Domain.Queries.Outputs
 {
-    public class StoryQueryResult
+    public class EventQueryResult
     {
         [JsonProperty("id")]
         public int Id { get; set; }
@@ -20,7 +20,10 @@ namespace MarvelCharacters.Domain.Queries.Results
         [JsonProperty("resourceURI")]
         public string ResourceURI { get; set; }
 
-        [JsonProperty("type")]
-        public string Type { get; set; }
+        [JsonProperty("start")]
+        public DateTime? Start { get; set; }
+
+        [JsonProperty("end")]
+        public DateTime? End { get; set; }
     }
 }

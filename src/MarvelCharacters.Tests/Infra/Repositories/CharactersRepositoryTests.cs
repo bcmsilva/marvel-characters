@@ -1,13 +1,13 @@
 ﻿using MarvelCharacters.Domain.Queries.Inputs;
 using MarvelCharacters.Infra.Repositories;
-using MarvelCharacters.Infra.Test.Mocks;
+using MarvelCharacters.Tests.Infra.Mocks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Globalization;
 
-namespace MarvelCharacters.Infra.Test.Repositories
+namespace MarvelCharacters.Tests.Infra.Repositories
 {
-    //[TestClass]
+    [TestClass]
     public class CharactersRepositoryTests
     {
         private FakeMarvelCatalogContext _dbContext;

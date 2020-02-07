@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 
-namespace MarvelCharacters.Infra.Test.Mocks
+namespace MarvelCharacters.Tests.Infra.Mocks
 {
     public class FakeMarvelCatalogContext : DbContext, IMarvelCatalogContext
     {

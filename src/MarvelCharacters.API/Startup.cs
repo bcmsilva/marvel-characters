@@ -37,18 +37,18 @@ namespace MarvelCharacters.API
                 });
             });
 
-            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
-            {
-                var context = serviceScope.ServiceProvider.GetRequiredService<MarvelCatalogContext>();
-                context.Database.EnsureCreated();
+            //using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            //{
+            //    var context = serviceScope.ServiceProvider.GetRequiredService<MarvelCatalogContext>();
+            //    context.Database.EnsureCreated();
 
 
-                var aa3 = serviceScope.ServiceProvider.GetService<ICharactersRepository>();
+            //    var aa3 = serviceScope.ServiceProvider.GetService<ICharactersRepository>();
 
-                var resultado = aa3.GetCharactersAsync(new Domain.Queries.GetPagedCharactersQuery { });
+            //    var resultado = aa3.GetCharactersAsync(new Domain.Queries.GetPagedCharactersQuery { });
 
-                var bla = resultado.Result;
-            }
+            //    var bla = resultado.Result;
+            //}
 
             //var cc = aa.Events.AsNoTracking().Include(i => i.Characters).ThenInclude(i => i.Character).ToList();
             ////var dd = aa.Characters.Include(i => i.Events).ToList();
